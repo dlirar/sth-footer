@@ -8,6 +8,15 @@
         display: flex;
         flex-wrap: wrap;
       }
+      
+      #footer-title, #footer-subtitle{
+      color: white;
+      }
+
+      #footer-description{
+      color: #565C6B;
+      }
+
       .footer{
       background-color: #373B44;
       }
@@ -20,7 +29,6 @@
         width: 100%;
         height: auto;
         display: flex;
-        padding: 20px;
         align-items: baseline;
       }
 
@@ -78,9 +86,9 @@
     <section class="footer">
       <section class="two-columns">
         <section class="footer-section-left"> 
-            <h1>[[footerTitle]]</h1> 
-            <h2>[[footerSubtitle]]</h2>
-            <p>[[footerDescription]]</p>
+            <h1 id="footer-title">[[footerTitle]]</h1> 
+            <h2 id="footer-subtitle">[[footerSubtitle]]</h2>
+            <p id="footer-description">[[footerDescription]]</p>
         </section>   
 
         <section class="footer-statistics footer-section-right">
