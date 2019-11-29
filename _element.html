@@ -1,0 +1,33 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="sth-footer">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+   
+  </template>
+
+  <script>
+    /**
+     * `sth-footer`
+     * footer of the site share to help.
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class SthFooter extends Polymer.Element {
+      static get is() { return 'sth-footer'; }
+      static get properties() {
+        return {
+          
+        };
+      }
+    }
+
+    window.customElements.define(SthFooter.is, SthFooter);
+  </script>
+</dom-module>

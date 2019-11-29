@@ -1,0 +1,106 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="sth-footer">
+
+  <template>
+    <style>
+      :host {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    </style>
+    <h1>[[footerTitle]]</h1> 
+    <h2>[[footerSubtitle]]</h2>
+    <p>[[footerDescription]]</p>
+
+    <section>
+      <h2>[[footerStatistics.title]]</h2>
+      <span>[[footerStatistics.members]]</span>
+      <span>[[footerStatistics.offers]]</span>
+      <span>[[footerStatistics.comments]]</span>
+    </section>
+   
+    <section>
+        <h2>[[footerEventsTitle]]</h2>
+        <dom-repeat id="sthFooterEvents" items="{{footerEvents}}">
+            <template>
+              <span>{{item.name}}</span>
+            </template>
+          </dom-repeat>
+    </section>
+
+    <section>
+      <h2>[[footerStuffTitle]]</h2>
+      <dom-repeat id="sthFooterStuff" items="{{footerStuff}}">
+          <template>
+            <span>{{item.name}}</span>
+          </template>
+        </dom-repeat>
+    </section>
+
+    <section>
+    </section>
+
+  </template>
+
+  <script>
+    /**
+     * `sth-footer`
+     * footer of the site share to help.
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class SthFooter extends Polymer.Element {
+      static get is() { return 'sth-footer'; }
+      static get properties() {
+        return {
+          footerTitle:{
+            type: String
+          },
+          footerSubtitle:{
+            type: String
+          },
+          footerDescription:{
+            type: String
+          },
+          footerStatistics:{
+            type: Object
+          },
+          footerEventsTitle:{
+            type: String
+          }, 
+          footerEvents:{
+             value(){
+              return[
+                {"name": "Julio regalado 2019"},
+                {"name": "Hot sale México 2019"},
+                {"name": "Black Friday Amazon 2019"},
+                {"name": "Amazon prime day 2019"}
+              ];
+            }
+          },
+          footerStuffTitle:{
+            type: String
+          },
+          footerStuff:{
+            value(){
+              return[
+                {"name": "Retroalimentación"},
+                {"name": "Contacto"},
+                {"name": "Nosotros"},
+                {"name": "Política de privadcidad"},
+                {"name": "Código de conducta"},
+                {"name": "Guías & tips"},
+                {"name": "FAQ"}
+              ];
+            }
+          }
+        };
+      }
+    }
+
+    window.customElements.define(SthFooter.is, SthFooter);
+  </script>
+</dom-module>

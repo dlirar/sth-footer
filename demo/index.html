@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>sth-footer demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../sth-footer.html">
+    <link rel="import" href="../iron-icon/iron-icon.html">
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+      </style>
+    </custom-style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic sth-footer demo</h3>
+      <demo-snippet>
+        <template>
+          <sth-footer footer-title="Share to help footer" footer-subtitle="La comunidad de compras inteligentes"
+          footer-description="Busca y comparte ofertas, además vota y decide qué promociones son buenas o malas e intercambia información con la comunidad"
+          footer-statistics='{"title": "Estadisticas", 
+                              "members": "450,231 miembros",
+                              "offers": "281,560 ofertas",
+                              "comments": "3,562,794 comentarios"
+                             }'
+          footer-events-title="Eventos especiales"
+          events=""
+          footer-stuff-title="Varios"
+          stuff="">
+          
+          </sth-footer>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>
