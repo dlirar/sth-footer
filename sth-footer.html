@@ -8,42 +8,116 @@
         display: flex;
         flex-wrap: wrap;
       }
-    </style>
-    <h1>[[footerTitle]]</h1> 
-    <h2>[[footerSubtitle]]</h2>
-    <p>[[footerDescription]]</p>
+      .footer{
+      background-color: #373B44;
+      }
 
-    <section>
-      <h2>[[footerStatistics.title]]</h2>
-      <span>[[footerStatistics.members]]</span>
-      <span>[[footerStatistics.offers]]</span>
-      <span>[[footerStatistics.comments]]</span>
-    </section>
-   
-    <section>
-        <h2>[[footerEventsTitle]]</h2>
-        <dom-repeat id="sthFooterEvents" items="{{footerEvents}}">
+      .one-column{
+        padding-left: 20px;
+      }
+
+      .two-columns{
+        width: 100%;
+        height: auto;
+        display: flex;
+        padding: 20px;
+        align-items: baseline;
+      }
+
+      .footer-section-left{
+        width: 50%;
+      }
+
+      .footer-section-left>h2,h3{
+        margin: 0;
+      }
+
+      .footer-section-right{
+        margin-right: auto;
+        margin-left: 10%;
+        width: auto;
+        display: flex row;
+      }
+
+      .footer-statistics{
+        background-color: #121316;
+        -webkit-flex-flow: row wrap;
+        width: 400px;
+      }
+
+      .footer-statistics>span{
+        color: white;
+      }
+
+      .footer-statistics>*{
+        padding: 5px;
+      }
+
+      .footer-section-title{
+        color: #565C6B;
+      }
+
+      .footer-section-text{
+        color: #AAB2C4;
+      }
+
+      .image-app{
+        width: 100px;
+        height: 50px;
+      }
+
+      .image-social{
+        width: 40px;
+        height: 40px;
+        margin-right: 5px;
+        border-radius: 50%;
+        filter: grayscale(100%);
+      }
+    </style>
+
+    <section class="footer">
+      <section class="two-columns">
+        <section class="footer-section-left"> 
+            <h1>[[footerTitle]]</h1> 
+            <h2>[[footerSubtitle]]</h2>
+            <p>[[footerDescription]]</p>
+        </section>   
+
+        <section class="footer-statistics footer-section-right">
+          <h2 class="footer-section-title">[[footerStatistics.title]]</h2>
+          <span class="text-number">[[footerStatistics.members]]</span>
+          <span class="text-number">[[footerStatistics.offers]]</span>
+          <span class="text-number">[[footerStatistics.comments]]</span>
+        </section>
+      </section>
+
+      <section class="one-column">
+          <h2 class="footer-section-title">[[footerEventsTitle]]</h2>
+          <dom-repeat id="sthFooterEvents" items="{{footerEvents}}">
+              <template>
+                <span class="footer-section-text">[[item.name]]</span>
+              </template>
+            </dom-repeat>
+      </section>
+    
+      <section>
+        <h2 class="footer-section-title">[[footerStuffTitle]]</h2>
+        <dom-repeat id="sthFooterStuff" items="{{footerStuff}}">
             <template>
-              <span>[[item.name]]</span>
+              <span class="footer-section-text">[[item.name]]</span>
             </template>
           </dom-repeat>
-    </section>
+      </section>
+  
+      <section>
+        <h2>[[iconTitle]]</h2>
+        <img src="[[iconFb.url]]" alt="[[iconFb.name]]" class="image-social">
+        <img src="[[iconTwitter.url]]" alt="[[iconTwitter.name]]" class="image-social">
+        <img src="[[iconYoutube.url]]" alt="[[iconYoutube.name]]" class="image-social">
+        <img src="[[iconInstagram.url]]" alt="[[iconInstagram.name]]" class="image-social">
+        <img src="[[iconBlogger.url]]" alt="[[iconBlogger.name]]" class="image-social">
+      </section>
 
-    <section>
-      <h2>[[footerStuffTitle]]</h2>
-      <dom-repeat id="sthFooterStuff" items="{{footerStuff}}">
-          <template>
-            <span>[[item.name]]</span>
-          </template>
-        </dom-repeat>
-    </section>
-
-    <section>
-      <img src="[[iconFb.url]]" alt="[[iconFb.name]]">
-      <img src="[[iconTwitter.url]]" alt="[[iconTwitter.name]]">
-      <img src="[[iconYoutube.url]]" alt="[[iconYoutube.name]]">
-      <img src="[[iconInstagram.url]]" alt="[[iconInstagram.name]]">
-      <img src="[[iconBlogger.url]]" alt="[[iconBlogger.name]]">
     </section>
 
   </template>
@@ -101,6 +175,9 @@
                 {"name": "FAQ"}
               ];
             }
+          },
+          iconTitle:{
+            type: String
           },
           iconFb:{
             type: Object
