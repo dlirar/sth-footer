@@ -24,7 +24,7 @@
         <h2>[[footerEventsTitle]]</h2>
         <dom-repeat id="sthFooterEvents" items="{{footerEvents}}">
             <template>
-              <span>{{item.name}}</span>
+              <span>[[item.name]]</span>
             </template>
           </dom-repeat>
     </section>
@@ -33,12 +33,17 @@
       <h2>[[footerStuffTitle]]</h2>
       <dom-repeat id="sthFooterStuff" items="{{footerStuff}}">
           <template>
-            <span>{{item.name}}</span>
+            <span>[[item.name]]</span>
           </template>
         </dom-repeat>
     </section>
 
     <section>
+      <img src="[[iconFb.url]]" alt="[[iconFb.name]]">
+      <img src="[[iconTwitter.url]]" alt="[[iconTwitter.name]]">
+      <img src="[[iconYoutube.url]]" alt="[[iconYoutube.name]]">
+      <img src="[[iconInstagram.url]]" alt="[[iconInstagram.name]]">
+      <img src="[[iconBlogger.url]]" alt="[[iconBlogger.name]]">
     </section>
 
   </template>
@@ -96,6 +101,21 @@
                 {"name": "FAQ"}
               ];
             }
+          },
+          iconFb:{
+            type: Object
+          },
+          iconTwitter:{
+            type: Object
+          },
+          iconYoutube:{
+            type: Object
+          },
+          iconInstagram:{
+            type: Object
+          },
+          iconBlogger:{
+            type: Object
           }
         };
       }
