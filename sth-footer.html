@@ -118,12 +118,12 @@
       </section>
   
       <section>
-        <h2>[[iconTitle]]</h2>
-        <img src="[[iconFb.url]]" alt="[[iconFb.name]]" class="image-social">
-        <img src="[[iconTwitter.url]]" alt="[[iconTwitter.name]]" class="image-social">
-        <img src="[[iconYoutube.url]]" alt="[[iconYoutube.name]]" class="image-social">
-        <img src="[[iconInstagram.url]]" alt="[[iconInstagram.name]]" class="image-social">
-        <img src="[[iconBlogger.url]]" alt="[[iconBlogger.name]]" class="image-social">
+        <h2 class="footer-section-title">[[iconTitle]]</h2>
+        <dom-repeat id="sthFooterIcons" items="{{footerIcon}}">
+          <template>
+              <img src="[[item.url]]" alt="[[item.name]]" class="image-social">
+          </template>
+        </dom-repeat>
       </section>
 
     </section>
@@ -182,6 +182,17 @@
                 {"name": "Guías & tips"},
                 {"name": "FAQ"}
               ];
+            }
+          },
+          footerIcon:{
+            value(){
+              return[
+              {"url":"/img/fbicon.png", "name":"twitter"},
+              {"url":"/img/twittericon.svg", "name":"twitter"},
+              {"url":"/img/youtubeicon.svg", "name":"youtube"},
+              {"url":"/img/instaicon.jpg", "name":"instagram"},
+              {"url": "/img/bloggericon.svg", "name":"blogger"}
+              ]
             }
           },
           iconTitle:{
