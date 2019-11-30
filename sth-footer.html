@@ -100,30 +100,24 @@
       </section>
 
       <section class="one-column">
-          <h2 class="footer-section-title">[[footerEventsTitle]]</h2>
-          <dom-repeat id="sthFooterEvents" items="{{footerEvents}}">
-              <template>
-                <span class="footer-section-text">[[item.name]]</span>
-              </template>
-            </dom-repeat>
+        <h2 class="footer-section-title">[[footerEventsTitle]]</h2>
+        <template is="dom-repeat" items="[[footerEvents]]">
+          <span class="footer-section-text">[[item.name]]</span>
+        </template>
       </section>
     
       <section>
         <h2 class="footer-section-title">[[footerStuffTitle]]</h2>
-        <dom-repeat id="sthFooterStuff" items="{{footerStuff}}">
-            <template>
-              <span class="footer-section-text">[[item.name]]</span>
-            </template>
-          </dom-repeat>
+          <template is="dom-repeat" items="[[footerStuff]]">
+            <span class="footer-section-text">[[item.name]]</span>
+          </template>
       </section>
-  
+      
       <section>
         <h2 class="footer-section-title">[[iconTitle]]</h2>
-        <dom-repeat id="sthFooterIcons" items="{{footerIcon}}">
-          <template>
-              <img src="[[item.url]]" alt="[[item.name]]" class="image-social">
-          </template>
-        </dom-repeat>
+        <template is="dom-repeat" items="[[footerIcon]]">
+          <img src="[[item.url]]" alt="[[item.name]]" class="image-social">
+        </template>
       </section>
 
     </section>
