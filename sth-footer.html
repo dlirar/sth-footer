@@ -115,8 +115,8 @@
       
       <section>
         <h2 class="footer-section-title">[[iconTitle]]</h2>
-        <template is="dom-repeat" items="[[footerIcon]]">
-          <img src="[[item.url]]" alt="[[item.name]]" class="image-social">
+        <template is="dom-repeat" items="[[footerIcon]]" as="image">
+          <img src="[[image.url]]" alt="[[image.name]]" class="image-social">
         </template>
       </section>
 
